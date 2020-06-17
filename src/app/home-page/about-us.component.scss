@@ -1,0 +1,102 @@
+@import "../../styles.scss";
+
+.content {
+    .logo-text.top {
+        color: $color-purple-dark;
+    }
+    .box-content.team {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        .small-img-box {
+            display: grid;
+            padding: 15px;
+            grid-template-rows: 165px 10px 40px 25px;
+            grid-template-columns: 150px;
+            grid-template-areas:
+                "image"
+                "header"
+                "paragraph"
+                "social_links";
+
+            .picture {
+                grid-area: image;
+                width: 100%;
+            }
+
+            h4 {
+                grid-area: header;
+                justify-self: center;
+                font-size: 16px;
+                font-weight: 300;
+            }
+            p {
+                text-align: center;
+                grid-area: paragraph;
+                font-size: 14px;
+                font-weight: 400;
+            }
+            .social-links-light {
+                grid-area: social_links;
+                text-align: center;
+                a {
+                    width: 20px;
+                    height: 20px;
+                    img {
+                        width: 20px;
+                    }
+                }
+            }
+        }
+
+    }
+    .content-box.partners, .content-box.sponsors {
+        .box-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            a {
+                display: inline-block;
+                width: 280px;
+                margin-top: 50px;
+                &.first {
+                    margin-top: 0px;
+                    justify-self: start;
+                }
+                &.full-width {
+                    width: 100%;
+                }
+                font-size: 40px;
+                font-weight: 800;
+                text-decoration: none;
+                color: $color-header;
+                img {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 930px) {
+    .content {
+        .content-box.partners, .content-box.sponsors {
+            .box-content {
+                justify-content: center;
+                a {
+                    font-size: 33px;
+
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    .content {
+        .box-content.team {
+            justify-content: center;
+        }
+    }
+}
